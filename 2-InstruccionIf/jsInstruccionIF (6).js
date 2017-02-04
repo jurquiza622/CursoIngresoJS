@@ -15,8 +15,7 @@ function Mostrar()
         }else{
         alert("es niñ@");
    		}
-    
-    
+        
 	}
 
 
