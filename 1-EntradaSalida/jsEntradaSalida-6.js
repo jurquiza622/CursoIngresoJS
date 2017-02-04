@@ -10,7 +10,6 @@ numero1=document.getElementById("numeroUno").value;
 numero2=document.getElementById("numeroDos").value;
 numero1=parseInt(numero1);
 numero2=parseInt(numero2);
-resultado=numero1+numero2;
-alert("el resultado es "+resultado)
+Alert("el resultado es "+resultado)
 }
 
