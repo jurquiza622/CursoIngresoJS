@@ -10,5 +10,73 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
-}
+ var lamparitas;
+ var marca;
+ var precioConDescuento;
+ var suma;
+ var impuestosBrutos;
+ marca=document.getElementById("Marca");
+ lamparitas=document.getElementById("Cantidad").value;
+ lamparitas=parseInt(lamparitas);
+ suma=lamparitas*35;
+ if(lamparitas>=6){
+     precioConDescuento=suma*0.5;
+     document.getElementById("precioDescuento").value=precioConDescuento;
+ };
+ switch(lamparitas){
+    case 5: switch(marca){
+        case ("ArgentinaLuz"): 
+            precioConDescuento=suma*0.6;
+        case ("“FelipeLamparas”"): 
+            precioConDescuento=suma*0.7;
+        case("JeLuz"):
+            precioConDescuento=suma*0.7;
+        case("HazIluminacion"):
+            precioConDescuento=suma*0.7;
+        case("Osram"):
+            precioConDescuento=suma*0.7;
+        document.getElementById("precioDescuento").value=precioConDescuento;
+        };
+    case 4: switch(marca){
+        case ("ArgentinaLuz"):
+             precioConDescuento=suma*0.75;
+        case ("“FelipeLamparas”"):
+            precioConDescuento=suma*0.75;
+        case("JeLuz"):
+            precioConDescuento=suma*0.8;
+        case("HazIluminacion"):
+            precioConDescuento=suma*0.8;
+        case("Osram"):
+            precioConDescuento=suma*0.8;
+        document.getElementById("precioDescuento").value=precioConDescuento;
+        };
+    case 3: switch(marca){
+        case ("ArgentinaLuz"):
+             precioConDescuento=suma*0.85;
+        case ("“FelipeLamparas”"): 
+            precioConDescuento=suma*0.9;
+        case("JeLuz"):
+            precioConDescuento=suma*0.95;
+        case("HazIluminacion"):
+            precioConDescuento=suma*0.95;
+        case("Osram"):
+            precioConDescuento=suma*0.95;
+        document.getElementById("precioDescuento").value=precioConDescuento;
+        }
+    case 2: 
+        precioConDescuento=suma;
+        document.getElementById("precioDescuento").value=precioConDescuento;
+    case 1:
+        precioConDescuento=suma;
+        document.getElementById("precioDescuento").value=precioConDescuento;
+    };
+
+if(precioConDescuento>=120){
+    precioConDescuento=precioConDescuento*1.1;
+    impuestosBrutos=precioConDescuento*0.1;
+    alert("Usted paga "+impuestosBrutos+" de IIBB");
+    };
+
+
+ }
+
