@@ -18,28 +18,33 @@ function CalcularPrecio ()
  marca=document.getElementById("Marca").value;
  cantidad=document.getElementById("Cantidad").value;
  cantidad=parseInt(cantidad);
+ marca=parseInt(marca);
  suma=cantidad*35;
- if(cantidad>=6){
+ if(cantidad>5){
      precioConDescuento=suma*0.5;
+
 }else{
- switch(cantidad){
+ switch(cantidad)
+ {
     case 5: 
-    switch(marca){
+    switch(marca)
+    {
         case ("ArgentinaLuz"): 
             precioConDescuento=suma*0.6;
             break;
        default:
             precioConDescuento=suma*0.7;
             break;
-        }
+        };
     
-    case 4: 
-    switch(marca){
+    case 4: {
+    switch(marca)
+    {
         case ("ArgentinaLuz"):
             precioConDescuento=suma*0.75;
             break;
 
-        case ("“FelipeLamparas”"):
+        case ("FelipeLamparas"):
             precioConDescuento=suma*0.75;
             break;
 
@@ -48,38 +53,36 @@ function CalcularPrecio ()
             break;
         
     };
-    case 3: 
-    switch(marca){
+ };
+    case 3: {
+    switch(marca)
+    {
         case ("ArgentinaLuz"):
              precioConDescuento=suma*0.85;
              break;
-
-        case ("“FelipeLamparas”"): 
+        case ("FelipeLamparas"): 
             precioConDescuento=suma*0.9;
             break;
-
-        case("JeLuz"):
-            precioConDescuento=suma*0.95;
-            break;
-
        default:
             precioConDescuento=suma*0.95;
             break;
-        
-    
+    };  
+    };
     default:
         precioConDescuento=suma;
         break;
- 
+
     
-};
-if(precioConDescuento>=120){
+}
+console.log(precioConDescuento);
+ }
+if(precioConDescuento>119){
     impuestosBrutos=precioConDescuento*0.1;
     precioConDescuento=precioConDescuento*1.1;
     impuestosBrutos=parseInt(impuestosBrutos);
     alert("Usted paga "+impuestosBrutos+" de IIBB");
     };
-
+ precioConDescuento=parseInt(precioConDescuento);
  document.getElementById("precioDescuento").value=precioConDescuento;
 
 
