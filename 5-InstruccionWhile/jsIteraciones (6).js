@@ -5,13 +5,18 @@ function Mostrar()
 	var acumulador=0;
 	var promedio;
 	var suma;
-	while(contador<=5){
-		acumulador=prompt("ingrese un valor numerico");
-		acumulador=parseInt(acumulador);
-		document.getElementById("suma").value=acumulador;
-
+	var numero;
+	while(contador<5){
 		contador++;
-	};
+		numero=prompt("ingrese un valor numerico");
+		numero=parseInt(numero);
+		acumulador+=numero;
+		
+};
+	promedio=acumulador/contador;
+	document.getElementById("suma").value=acumulador;
+	document.getElementById("promedio").value=promedio;
+
 
 
 

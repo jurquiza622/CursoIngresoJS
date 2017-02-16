@@ -21,107 +21,66 @@ function CalcularPrecio ()
  suma=cantidad*35;
  if(cantidad>=6){
      precioConDescuento=suma*0.5;
-     document.getElementById("precioDescuento").value=precioConDescuento;
 }else{
  switch(cantidad){
-    case 5: {
+    case 5: 
     switch(marca){
         case ("ArgentinaLuz"): 
             precioConDescuento=suma*0.6;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
-        case ("FelipeLamparas"): 
+       default:
             precioConDescuento=suma*0.7;
-            document.getElementById("precioDescuento").value=precioConDescuento;
-            break;
-        case("JeLuz"):
-            precioConDescuento=suma*0.7;
-            document.getElementById("precioDescuento").value=precioConDescuento;
-            break;
-        case("HazIluminacion"):
-            precioConDescuento=suma*0.7;
-            document.getElementById("precioDescuento").value=precioConDescuento;
-            break;
-        case("Osram"):
-            precioConDescuento=suma*0.7;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
         }
-    };
-    case 4: {
+    
+    case 4: 
     switch(marca){
         case ("ArgentinaLuz"):
             precioConDescuento=suma*0.75;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
 
         case ("“FelipeLamparas”"):
             precioConDescuento=suma*0.75;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
 
-        case("JeLuz"):
+        default:
             precioConDescuento=suma*0.8;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
-
-        case("HazIluminacion"):
-            precioConDescuento=suma*0.8;
-            document.getElementById("precioDescuento").value=precioConDescuento;
-            break;
-
-        case("Osram"):
-            precioConDescuento=suma*0.8;
-            document.getElementById("precioDescuento").value=precioConDescuento;
-            break;
-        }
+        
     };
-    case 3: {
+    case 3: 
     switch(marca){
         case ("ArgentinaLuz"):
              precioConDescuento=suma*0.85;
-             document.getElementById("precioDescuento").value=precioConDescuento;
              break;
 
         case ("“FelipeLamparas”"): 
             precioConDescuento=suma*0.9;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
 
         case("JeLuz"):
             precioConDescuento=suma*0.95;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
 
-        case("HazIluminacion"):
+       default:
             precioConDescuento=suma*0.95;
-            document.getElementById("precioDescuento").value=precioConDescuento;
             break;
-
-        case("Osram"):
-            precioConDescuento=suma*0.95;
-            document.getElementById("precioDescuento").value=precioConDescuento;
-            break;
-        }
-    };
-    case 2: {
+        
+    
+    default:
         precioConDescuento=suma;
-        document.getElementById("precioDescuento").value=precioConDescuento;
         break;
-    };
-    case 1:{
-        precioConDescuento=suma;
-        document.getElementById("precioDescuento").value=precioConDescuento;
-        break;
- };
-    };
+ 
+    
 };
 if(precioConDescuento>=120){
-    precioConDescuento=precioConDescuento*1.1;
     impuestosBrutos=precioConDescuento*0.1;
+    precioConDescuento=precioConDescuento*1.1;
     impuestosBrutos=parseInt(impuestosBrutos);
     alert("Usted paga "+impuestosBrutos+" de IIBB");
     };
+
+ document.getElementById("precioDescuento").value=precioConDescuento;
 
 
  }
