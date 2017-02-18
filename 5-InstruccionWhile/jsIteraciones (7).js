@@ -12,7 +12,7 @@ while(true){
 	acumulador+=numero;
 	promedio=acumulador/contador;
 	
-	continuar=prompt("Desea continuar? (escriba n para salir)")
+	continuar=prompt("Desea continuar? (escriba n para salir)");
 	if(continuar=="n"){
 		break;
 		
