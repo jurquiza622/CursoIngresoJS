@@ -13,6 +13,7 @@ var estadoCivil;
 var sueldoBruto;
 var numeroDeLegajo;
 var nacionalidad;
+var comprobador;
 
 function ComenzarIngreso () 
 {
@@ -26,15 +27,15 @@ function ComenzarIngreso ()
             alert("sexo incorrecto");
             sexo=prompt("indique su sexo: M para masculino o F para femenino");
         };
-    switch(sexo){
-            case "M":
-            sexo="Masculino";
-            case "F":
-            sexo="Femenino";
-                };
+switch(sexo){
+                case "M":
+                sexo="Masculino";
+                case "F":
+                sexo="Femenino";
+            };
     estadoCivil=prompt("Estado civil, ingrese 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos");
     estadoCivil=parseInt(estadoCivil);
-    if(estadoCivil<0 || estadoCivil>4)
+    while(estadoCivil<=0 || estadoCivil>4)
             {
             alert("Estado civil incorrecto");
             estadoCivil=prompt("Estado civil, ingrese 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos");
@@ -49,24 +50,30 @@ function ComenzarIngreso ()
             };
     numeroDeLegajo=prompt("ingrese su numero de legajo");
     numeroDeLegajo=parseInt(numeroDeLegajo);
-    while(numeroDeLegajo>9999 || numeroDeLegajo<0)
+    while(numeroDeLegajo>9999 || numeroDeLegajo<=0)
          {
             alert("numero de legajo incorrecto");
             numeroDeLegajo=prompt("ingrese su numero de legajo");
             numeroDeLegajo=parseInt(numeroDeLegajo);         
          };
     nacionalidad=prompt("ingrese su nacionalidad 'A' para argentinos, 'E' para extranjeros, 'N' para nacionalizados");
-    switch(nacionalidad){
-            case ("A"):
-            nacionalidad="Argentino";
-            case("E"):
-            nacionalidad="Extranjero";
-            case("N"):
-            nacionalidad="Nacionalizado";
-            default:
-            alert("Nacionalidad incorrecta");
-            nacionalidad=prompt("ingrese su nacionalidad 'A' para argentinos, 'E' para extranjeros, 'N' para nacionalizados");
-            };
+    while(comprobador==false){
+        switch(nacionalidad){
+                case ("A"):
+                nacionalidad="Argentino";
+                comprobador=true;
+                case ("E"):
+                nacionalidad="Extranjero";
+                comprobador=true;
+                case ("N"):
+                nacionalidad="Nacionalizado";
+                comprobador=true;
+                default:
+                alert("Nacionalidad incorrecta");
+                comprobador=false;
+                nacionalidad=prompt("ingrese su nacionalidad 'A' para argentinos, 'E' para extranjeros, 'N' para nacionalizados");
+        };
+    };
     document.getElementById("Edad").value=edad;
     document.getElementById("Sexo").value=sexo;
     document.getElementById("EstadoCivil").value=estadoCivil;
