@@ -18,29 +18,39 @@ var comprobador;
 function ComenzarIngreso () 
 {
     edad=prompt("ingrese su edad");
-    while(edad>=91 || edad<=17){
+    while(isNaN(edad)||edad>=91 || edad<=17)
+            {
             alert("edad incorrecta");
-            edad=prompt("ingrese su edad");
-            };
+            edad=prompt("ingrese su edad"); 
+            };             
+            
+
+
     sexo=prompt("indique su sexo: M para masculino o F para femenino");
-    while(sexo!="M" && sexo!="H"){
+    while(sexo!="M" && sexo!="H")
+        {
             alert("sexo incorrecto");
             sexo=prompt("indique su sexo: M para masculino o F para femenino");
         };
-switch(sexo){
+    switch(sexo){
                 case "M":
                 sexo="Masculino";
                 case "F":
                 sexo="Femenino";
             };
+
+
     estadoCivil=prompt("Estado civil, ingrese 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos");
     estadoCivil=parseInt(estadoCivil);
-    while(estadoCivil<=0 || estadoCivil>4)
-            {
+    while(isNaN(estadoCivil) ||estadoCivil<1 || estadoCivil>4)
+        {
             alert("Estado civil incorrecto");
             estadoCivil=prompt("Estado civil, ingrese 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos");
             estadoCivil=parseInt(estadoCivil);
-            };
+        };
+    
+
+
     sueldoBruto=prompt("ingrese su sueldo bruto");
     sueldoBruto=parseInt(sueldoBruto);
     while(sueldoBruto<8000){
@@ -48,6 +58,8 @@ switch(sexo){
             sueldoBruto=prompt("ingrese su sueldo bruto");
             parseInt(sueldoBruto);
             };
+
+
     numeroDeLegajo=prompt("ingrese su numero de legajo");
     numeroDeLegajo=parseInt(numeroDeLegajo);
     while(numeroDeLegajo>9999 || numeroDeLegajo<=0)
@@ -56,7 +68,14 @@ switch(sexo){
             numeroDeLegajo=prompt("ingrese su numero de legajo");
             numeroDeLegajo=parseInt(numeroDeLegajo);         
          };
+
+
     nacionalidad=prompt("ingrese su nacionalidad 'A' para argentinos, 'E' para extranjeros, 'N' para nacionalizados");
+    while(typeof string(nacionalidad))
+    {
+                nacionalidad=prompt("ingrese su nacionalidad 'A' para argentinos, 'E' para extranjeros, 'N' para nacionalizados");
+                break;
+    }
     while(comprobador==false){
         switch(nacionalidad){
                 case ("A"):
